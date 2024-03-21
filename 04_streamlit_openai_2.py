@@ -2,8 +2,8 @@ from openai import OpenAI
 import streamlit as st
 import time
 
-assistant_id = 'asst_nDJQyYd7hDbErX9NtRGsyzla'
-# thread_id = 'thread_fOTExwTI9UKIOKEdKnHoLBTj'
+assistant_id = st.secrets["assistant_id"]
+thread_id = st.secrets["thread_id"]
 
 with st.sidebar:
     st.link_button("더 좋은 컨텐츠를 위해 후원하기","https://naver.com")
@@ -15,7 +15,7 @@ with st.sidebar:
 
     openai_api_key = st.text_input("OpenAI API KEY", type="password")
 
-    thread_id = st.text_input("Thread ID", value='thread_fOTExwTI9UKIOKEdKnHoLBTj')
+    thread_id = st.text_input("Thread ID", value='thread_id')
 
     client = OpenAI(api_key=openai_api_key)
 
